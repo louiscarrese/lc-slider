@@ -1,0 +1,235 @@
+/* Those are required by the unslider plugin */
+.lc-slider { position: relative; overflow: auto; }
+.lc-slider li { list-style: none; }
+.lc-slider ul li { float: left; position:relative;}
+
+.lc-slider .vertical-center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.lc-slider .surimposed {
+    opacity: 0;
+	-webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.lc-slider:hover .surimposed {
+    opacity: 1;
+	-webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+}
+
+
+/**********
+ * Arrows *
+ **********/
+
+.arrows {
+    height: 60px;
+    width: 100%;
+}
+
+.lc-slider .arrow {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    cursor: pointer;
+    height:60px;
+    width: 59px;
+    z-index: 100;
+    color: #fff;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}   
+
+.lc-slider .arrow:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* The prev arrow is on the left */
+.lc-slider .arrow.prev {
+    float: left;
+    background-image: url("img/arrow_left-transparent.png");
+    background-position: left;
+}
+
+
+/* The next arrow is on the right */
+.lc-slider .arrow.next {
+    float: right;
+    background-image: url("img/arrow_right-transparent.png");
+    background-position: right;
+}
+
+
+/******** 
+ * Dots *
+ ********/
+.lc-slider .dots-wrapper {
+	   position: absolute; 
+	   left: 50%;
+	   bottom: 20px;
+}
+
+
+.lc-slider .dot {
+	float: left;
+	background-color: none;
+
+	width: 8px;
+	height: 8px;
+	margin-right: 5px;
+	margin-left: 5px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+	border-bottom-color: #FFFFFF;
+	border-left-color: #FFFFFF;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	outline-color: #000000;
+}
+
+.lc-slider .dot:hover {
+	background-color: #fff;
+}
+.lc-slider .dot.active {
+	background-color: #fff;
+}
+
+/****************
+ * Progress bar *
+ ****************/
+.lc-slider .progressbar {
+    position: absolute;
+    top: 1px;
+    height: 3px;
+
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/***********
+ * Caption *
+ ***********/
+/* Default configuration for displaying images */
+@media(min-width: 970px) {
+    .lc-slider .lc-slider-picture-container {
+        z-index: 0;
+        width:100%;
+        height: 500px;
+/*        position: relative;*/
+        text-align: center;
+        overflow:hidden;
+    }
+
+    .lc-slider .lc-slider-picture {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-width: 100%;
+        min-height: 500px;
+        position: relative;
+        left: 100%; 
+        margin-left: -200%;
+
+    }
+}
+
+@media(max-width: 970px) {
+    .lc-slider .lc-slider-picture-container {
+        z-index: 0;
+
+        max-height: 500px;
+        text-align: center;
+        overflow:hidden;
+        position: relative;
+    }
+
+    .lc-slider .lc-slider-picture {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 145%;
+        position: relative;
+        left: 100%; 
+        margin-left: -200%;
+    }
+}
+
+
+.lc-slider-caption {
+    height: 200px;
+    width: 500px;
+    left:0;
+    right: 500px;
+    color:#fff;
+
+}
+.lc-slider-caption h2 {
+
+    font-size: 60px;
+    line-height: 66px;
+}
+
+.lc-slider-caption  a {
+    display: inline-block;
+    margin-top: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    padding-bottom: 9px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 9px;
+    border-top-color: #FFFFFF;
+    border-right-color: #FFFFFF;
+    border-bottom-color: #FFFFFF;
+    border-left-color: #FFFFFF;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    display: inline-block;
+    font-family: "Open Sans","Helvetica Neue","Helvetica",Arial,serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/**************
+ * Description
+ **************/
+.lc-slider-description {
+    position:absolute;
+    bottom: 0;
+    right: 0;
+
+    padding: 5px;
+
+    color: #fff;
+}
