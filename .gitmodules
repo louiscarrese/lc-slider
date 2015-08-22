@@ -1,0 +1,3 @@
+[submodule "lc-genconf"]
+	path = lc-genconf
+	url = https://github.com/louiscarrese/lc-genconf.git
