@@ -18,11 +18,13 @@ require_once('lc-slider-admin-configuration.php');
 //Hook pour charger les différentes ressources (CSS, javascript, ...)
 add_action('wp_enqueue_scripts', 'lc_slider_ressource_register');
 function lc_slider_ressource_register() {
+	//owl.carousel
+	wp_enqueue_style('owl-carousel-style', plugins_url('owl.carousel/owl-carousel/owl.carousel.css', __FILE__));
+	wp_enqueue_style('owl-carousel-theme', plugins_url('owl.carousel/owl-carousel/owl.theme.css', __FILE__));
+	wp_enqueue_script('owl-carousel-script', plugins_url('owl.carousel/owl-carousel/owl.carousel.js', __FILE__), array('jquery'));
+
 	//La CSS par défaut
 	wp_enqueue_style('lc_slider_style', plugins_url('lc-slider.css', __FILE__));
-
-	//Le javascript de unslider
-  wp_enqueue_script('lc-slider-unslider', plugins_url('slider.js', __FILE__), array('jquery'));
 
 	//Le javascript qui init les sliders sur la page
 	wp_enqueue_script('lc-slider-init', plugins_url('lc-slider.js', __FILE__));
@@ -61,11 +63,10 @@ function lc_slider($id, $echo = false) {
 	$html = '';
 
 	//Début du bloc HTML
-	$html .= '<div id="main-slider" class="lc-slider main-slider" data-sliderid="' . $id . '">';
-	$html .= '<ul>';
+	$html .= '<div id="main-slider" class="lc-slider main-slider owl-carousel" data-sliderid="' . $id . '">';
 
 	foreach($images as $image) {
-		$html .= '<li>';
+		$html .= '<div>';
 		$html .= '<div class="lc-slider-picture-container">';
 		$html .= '<img class="lc-slider-picture" src="' . $image['url'] . '" />';
 		$html .= '</div>';
@@ -79,12 +80,11 @@ function lc_slider($id, $echo = false) {
 
 		if($lc_conf->get('display', 'show_description') == 0)
 		  $html .= '<div class="lc-slider-description lc-slider-notransition">' . $image['description'] . '</div>';
-		$html .= '</li>';
+		$html .= '</div>';
 	}
 
 
 	//Fin du bloc HTML
-	$html .= '</ul>';
 	$html .= '</div>';
 
 	echo $html;

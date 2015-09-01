@@ -1,6 +1,10 @@
 
 jQuery(function () {
-	jQuery('.lc-slider').unslider(lcSliderParams);
+	jQuery('.owl-carousel').owlCarousel({
+		singleItem: true,
+		navigation: true
+
+	});
 
 });
 
