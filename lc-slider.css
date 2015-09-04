@@ -1,33 +1,6 @@
-.lc-slider .vertical-center {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-}
-
-.lc-slider .surimposed {
-    opacity: 0;
-	-webkit-transition: opacity 0.2s ease-in-out;
-    -moz-transition: opacity 0.2s ease-in-out;
-    -o-transition: opacity 0.2s ease-in-out;
-    transition: opacity 0.2s ease-in-out;
-}
-
-.lc-slider:hover .surimposed {
-    opacity: 1;
-	-webkit-transition: opacity 0.2s ease-in-out;
-    -moz-transition: opacity 0.2s ease-in-out;
-    -o-transition: opacity 0.2s ease-in-out;
-    transition: opacity 0.2s ease-in-out;
-}
-
-
-
 /* Default configuration for displaying images */
 
 .lc-slider-slide  {
-    z-index: 0;
-    text-align: center;
     overflow:hidden;
 }
 
@@ -38,55 +11,39 @@
 }
 
 
-/***********
- * Caption *
- ***********/
 .lc-slider-caption {
-    height: 200px;
-    width: 500px;
-    left:0;
-    right: 500px;
-    color:#fff;
-
+    position: absolute;
+    top: 20%;
+    left: 10%;
 }
-.lc-slider-caption h2 {
 
+.lc-slider-title span {
+    background-color: rgba(0,0,0,0.2);
+    color: #000;
+
+    padding: 10px 20px;
     font-size: 60px;
     line-height: 66px;
 }
 
-.lc-slider-caption  a {
-    display: inline-block;
-    margin-top: 25px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    line-height: 20px;
-    border-top-width: 2px;
-    border-right-width: 2px;
-    border-bottom-width: 2px;
-    border-left-width: 2px;
-    padding-bottom: 9px;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 9px;
-    border-top-color: #FFFFFF;
-    border-right-color: #FFFFFF;
-    border-bottom-color: #FFFFFF;
-    border-left-color: #FFFFFF;
-    border-top-style: solid;
-    border-right-style: solid;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    display: inline-block;
-    font-family: "Open Sans","Helvetica Neue","Helvetica",Arial,serif;
-    text-transform: uppercase;
-    text-align: center;
+.lc-slider-link {
+        margin-top: 40px;
+
 }
 
-/**************
- * Description
- **************/
+.lc-slider-link a {
+    background-color: rgba(0,0,0,0.2);
+    color: #000;
+
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+.lc-slider-link:hover a {
+    background-color: rgba(0,0,0,0.6);
+}
+
+
 .lc-slider-description {
     position:absolute;
     bottom: 0;
@@ -94,5 +51,7 @@
 
     padding: 5px;
 
-    color: #fff;
+    color: #000;
+
+    background-color: rgba(0,0,0,0.2);
 }

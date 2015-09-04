@@ -65,21 +65,36 @@ function lc_slider($id, $echo = false) {
 	//Début du bloc HTML
 	$html .= '<div id="main-slider" class="lc-slider owl-carousel" data-sliderid="' . $id . '">';
 
+	$linktext = $lc_conf->get('display', 'linktext');
 	foreach($images as $image) {
-		$html .= '<div class="lc-slider-slide">';
-		 $html .= '<div class="lc-slider-picture" style="background-image:url(' . $image['url'] . ')">';
-		 $html .= '<img style="visibility:hidden" src="' . $image['url'] . '" />';
-		 $html .= '</div>';
+		$title = $lc_conf->get('display', 'show_title') == 1 ? $image['title'] : '';
+		$description = $lc_conf->get('display', 'show_description') == 1 ? $image['description'] : '';
 
-		$html .= '<div class="lc-slider-caption vertical-center lc-slider-notransition">';
-		if($lc_conf->get('display', 'show_title') == 1) 
-		  $html .= '<h2>' . $image['title'] . '</h2>';
-		if($lc_conf->get('display', 'linktext') != '')
-		  $html .= '<a href="">' . $lc_conf->get('display', 'linktext') . '</a>';
+		//Start the slide
+		$html .= '<div class="lc-slider-slide">';
+
+		//Put the image
+		$html .= '<div class="lc-slider-picture" style="background-image:url(' . $image['url'] . ')">';
+		$html .= '<img style="visibility:hidden" src="' . $image['url'] . '" />';
 		$html .= '</div>';
 
-		if($lc_conf->get('display', 'show_description') == 0)
-		  $html .= '<div class="lc-slider-description lc-slider-notransition">' . $image['description'] . '</div>';
+		//Put the caption and the linktext if needed
+		if($title != '' || $linktext != '') {
+			$html .= '<div class="lc-slider-caption">';
+
+			if($title != '') 
+				$html .= '<div class="lc-slider-title"><span>' . $title . '</span></div>';
+			if($linktext != '') 
+				$html .= '<div class="lc-slider-link"><a href="#">' . $linktext . '</a></div>';
+
+			$html .= '</div>';
+		}
+
+		//Put the description
+		if($description != '')
+			$html .= '<div class="lc-slider-description">' . $description . '</div>';
+
+		//Close the slide
 		$html .= '</div>';
 	}
 
