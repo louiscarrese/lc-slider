@@ -70,7 +70,6 @@ function lc_slider($id, $echo = false) {
 		 $html .= '<div class="lc-slider-picture" style="background-image:url(' . $image['url'] . ')">';
 		 $html .= '<img style="visibility:hidden" src="' . $image['url'] . '" />';
 		 $html .= '</div>';
-		//$html .= '<img class="lc-slider-picture" src="' . $image['url'] . '" />';
 
 		$html .= '<div class="lc-slider-caption vertical-center lc-slider-notransition">';
 		if($lc_conf->get('display', 'show_title') == 1) 
