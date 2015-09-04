@@ -96,11 +96,11 @@ function lc_slider_conf_definition() {
 				'eyecandy' => array( //Une section de configuration
 					'title' => 'Configuration de l\'ergonomie',
 					'fields' => array( //La liste des champs de la section
-						'transitioned' => array( //Un champ de la section
-							'label' => 'Sélecteur des éléments ne "glissant" pas',
+						'theme' => array( //Un champ de la section
+							'label' => 'Nom du thème à appliquer',
 							'type' => 'text',
-							'default_value' => '.lc-slider-caption',
-						), //transitioned
+							'default_value' => '',
+						), //theme
 						'progressbar' => array( //Un champ de la section
 							'label' => 'Afficher la barre de progression',
 							'explanation' => 'La barre de progression peut impacter les performances du navigateur',

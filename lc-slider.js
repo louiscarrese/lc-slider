@@ -7,7 +7,6 @@ jQuery(function () {
 
 		//Add common options
 		options['singleItem'] = true;
-		options['theme'] = 'ak-owl-theme';
 		options['navigationText'] = ['', ''];
 		options['stopOnHover'] = true;
 //		options['navigation'] = true;
@@ -34,7 +33,7 @@ function extractOptions(options, sliderId) {
     	navigation: (options[sliderId]["nav"]["arrows"] == 1),
     	pagination: (options[sliderId]["nav"]["bullets"] == 1),
     	slideSpeed: options[sliderId]["speed"]["speed"],
-    	//TODO: theme: options[sliderId]["eyecandy"]["theme"],
+    	theme: options[sliderId]["eyecandy"]["theme"]
 
 		// speed: options[sliderId]["speed"]["speed"],
 		// delay: options[sliderId]["speed"]["delay"],
