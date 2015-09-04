@@ -1,8 +1,8 @@
-/* Those are required by the unslider plugin */
+/* Those are required by the unslider plugin 
 .lc-slider { position: relative; overflow: auto; }
 .lc-slider li { list-style: none; }
 .lc-slider ul li { float: left; position:relative;}
-
+*/
 .lc-slider .vertical-center {
     position: absolute;
     top: 0;
@@ -27,154 +27,22 @@
 }
 
 
-/**********
- * Arrows *
- **********/
-
-.arrows {
-    height: 60px;
-    width: 100%;
-}
-
-.lc-slider .arrow {
-    background-attachment: scroll;
-    background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0.2);
-    background-origin: padding-box;
-    background-repeat: no-repeat;
-    background-size: auto auto;
-    cursor: pointer;
-    height:60px;
-    width: 59px;
-    z-index: 100;
-    color: #fff;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
-}   
-
-.lc-slider .arrow:hover {
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-/* The prev arrow is on the left */
-.lc-slider .arrow.prev {
-    float: left;
-    background-image: url("img/arrow_left-transparent.png");
-    background-position: left;
-}
-
-
-/* The next arrow is on the right */
-.lc-slider .arrow.next {
-    float: right;
-    background-image: url("img/arrow_right-transparent.png");
-    background-position: right;
-}
-
-
-/******** 
- * Dots *
- ********/
-.lc-slider .dots-wrapper {
-	   position: absolute; 
-	   left: 50%;
-	   bottom: 20px;
-}
-
-
-.lc-slider .dot {
-	float: left;
-	background-color: none;
-
-	width: 8px;
-	height: 8px;
-	margin-right: 5px;
-	margin-left: 5px;
-	border-top-width: 1px;
-	border-right-width: 1px;
-	border-bottom-width: 1px;
-	border-left-width: 1px;
-	border-top-color: #FFFFFF;
-	border-right-color: #FFFFFF;
-	border-bottom-color: #FFFFFF;
-	border-left-color: #FFFFFF;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-	outline-color: #000000;
-}
-
-.lc-slider .dot:hover {
-	background-color: #fff;
-}
-.lc-slider .dot.active {
-	background-color: #fff;
-}
-
-/****************
- * Progress bar *
- ****************/
-.lc-slider .progressbar {
-    position: absolute;
-    top: 1px;
-    height: 3px;
-
-    background-color: rgba(255, 255, 255, 0.4);
-}
 
 /***********
  * Caption *
  ***********/
 /* Default configuration for displaying images */
-@media(min-width: 970px) {
-    .lc-slider .lc-slider-picture-container {
-        z-index: 0;
-        width:100%;
-        height: 500px;
-/*        position: relative;*/
-        text-align: center;
-        overflow:hidden;
-    }
 
-    .lc-slider .lc-slider-picture {
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        min-width: 100%;
-        min-height: 500px;
-        position: relative;
-        left: 100%; 
-        margin-left: -200%;
-
-    }
+.lc-slider-slide  {
+    z-index: 0;
+    text-align: center;
+    overflow:hidden;
 }
 
-@media(max-width: 970px) {
-    .lc-slider .lc-slider-picture-container {
-        z-index: 0;
-
-        max-height: 500px;
-        text-align: center;
-        overflow:hidden;
-        position: relative;
-    }
-
-    .lc-slider .lc-slider-picture {
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 145%;
-        position: relative;
-        left: 100%; 
-        margin-left: -200%;
-    }
+.lc-slider .lc-slider-picture {
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 

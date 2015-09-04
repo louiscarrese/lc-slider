@@ -63,13 +63,14 @@ function lc_slider($id, $echo = false) {
 	$html = '';
 
 	//Début du bloc HTML
-	$html .= '<div id="main-slider" class="lc-slider main-slider owl-carousel" data-sliderid="' . $id . '">';
+	$html .= '<div id="main-slider" class="lc-slider owl-carousel" data-sliderid="' . $id . '">';
 
 	foreach($images as $image) {
-		$html .= '<div>';
-		$html .= '<div class="lc-slider-picture-container">';
-		$html .= '<img class="lc-slider-picture" src="' . $image['url'] . '" />';
-		$html .= '</div>';
+		$html .= '<div class="lc-slider-slide">';
+		 $html .= '<div class="lc-slider-picture" style="background-image:url(' . $image['url'] . ')">';
+		 $html .= '<img style="visibility:hidden" src="' . $image['url'] . '" />';
+		 $html .= '</div>';
+		//$html .= '<img class="lc-slider-picture" src="' . $image['url'] . '" />';
 
 		$html .= '<div class="lc-slider-caption vertical-center lc-slider-notransition">';
 		if($lc_conf->get('display', 'show_title') == 1) 
@@ -107,7 +108,7 @@ function get_images($lc_conf) {
 
 function get_images_metabox($metabox_id) {
   $images = array();
-  $metabox_images = rwmb_meta($metabox_id, 'type=image&size=large');
+  $metabox_images = rwmb_meta($metabox_id, 'type=image&size=post_slider');
   foreach($metabox_images as $metabox_image) {
     $images[] = array(
 		      'url' => $metabox_image['url'],
